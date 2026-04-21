@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #FAF8F4;
+    --warm: #F2EFE8;
+    --card: #FFFFFF;
+    --ink: #2A2520;
+    --mid: #7A7168;
+    --soft: #C8C2B8;
+    --border: #E0DBD4;
+    --red: #FF3319;
+    --red2: #E02200;
+    --always-dark: #020202;
+    --always-cream: #EDEDED;
+  }
+
+  .dark {
+    --bg: #050505;
+    --warm: #090909;
+    --card: #0B0B0B;
+    --ink: #F0F0EE;
+    --mid: #A0A0A0;
+    --soft: #3C3C3C;
+    --border: #1E1E1E;
+    --red: #FF3319;
+    --red2: #E02200;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: var(--font-dm-sans), sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+  }
+}
+
+@layer utilities {
+  .font-oswald {
+    font-family: var(--font-oswald), sans-serif;
+  }
+  .text-ink { color: var(--ink); }
+  .text-mid { color: var(--mid); }
+  .text-soft { color: var(--soft); }
+  .text-red { color: var(--red); }
+  .bg-bg { background-color: var(--bg); }
+  .bg-warm { background-color: var(--warm); }
+  .bg-card { background-color: var(--card); }
+  .bg-red { background-color: var(--red); }
+  .border-border { border-color: var(--border); }
+}
+
+/* Custom cursor */
+.custom-cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+  mix-blend-mode: normal;
+}
+
+.custom-cursor.expanded {
+  width: 36px;
+  height: 36px;
+  opacity: 0.4;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
