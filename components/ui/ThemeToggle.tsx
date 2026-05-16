@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'))

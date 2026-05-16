@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: 'noreply@delsur.studio',
-        to: 'hola@delsur.studio',
+        to: 'brendadelsurdigital@gmail.com',
         subject,
         html: htmlBody,
         reply_to: undefined,

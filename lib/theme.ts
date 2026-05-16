@@ -2,8 +2,7 @@
 
 export function initTheme() {
   const stored = localStorage.getItem('theme')
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  const theme = stored ?? (prefersDark ? 'dark' : 'light')
+  const theme = stored !== 'light' ? 'dark' : 'light'
   document.documentElement.classList.toggle('dark', theme === 'dark')
 }
 

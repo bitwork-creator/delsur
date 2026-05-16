@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/uriellange/Carpeta de prueba/delsur/app/layout\":[\"static/media/13971731025ec697-s.p.woff2\",\"static/media/7f06be3f780a819a-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/brendaalaniz/Carpeta de prueba/delsur/app/layout\":[\"static/media/13971731025ec697-s.p.woff2\",\"static/media/7f06be3f780a819a-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
