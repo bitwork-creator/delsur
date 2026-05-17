@@ -3,9 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { need, name, business, message, lang, type, budget, campaigns, adBudget } = body
+    const { need, name, business, phone, email, message, lang, type, budget, campaigns, adBudget } = body
 
-    if (!name?.trim() || !business?.trim()) {
+    if (!name?.trim() || !business?.trim() || !phone?.trim()) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
       <h2>${subject}</h2>
       <p><strong>Nombre:</strong> ${name}</p>
       <p><strong>Negocio:</strong> ${business}</p>
+      <p><strong>Teléfono:</strong> ${phone}</p>
+      ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
       ${type ? `<p><strong>Tipo:</strong> ${type}</p>` : ''}
       ${budget ? `<p><strong>Presupuesto:</strong> ${budget}</p>` : ''}
       ${campaigns ? `<p><strong>Campañas activas:</strong> ${campaigns}</p>` : ''}
@@ -42,7 +44,7 @@ export async function POST(req: NextRequest) {
         to: 'brendadelsurdigital@gmail.com',
         subject,
         html: htmlBody,
-        reply_to: undefined,
+        reply_to: email || undefined,
       }),
     })
 

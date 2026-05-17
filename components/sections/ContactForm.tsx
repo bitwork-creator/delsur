@@ -17,6 +17,7 @@ export default function ContactForm({ lang }: Props) {
 
   const [form, setForm] = useState({
     name: '', business: '',
+    phone: '', email: '',
     type: '', budget: '',
     campaigns: '', adBudget: '',
     message: '',
@@ -33,7 +34,7 @@ export default function ContactForm({ lang }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!form.name.trim() || !form.business.trim()) return
+    if (!form.name.trim() || !form.business.trim() || !form.phone.trim()) return
     setLoading(true)
     setError('')
     try {
@@ -172,6 +173,14 @@ export default function ContactForm({ lang }: Props) {
                         <input name="business" required value={form.business} onChange={handleChange} style={inputStyle} />
                       </div>
                       <div>
+                        <label style={labelStyle}>{t.formWeb.phone}</label>
+                        <input name="phone" type="tel" required value={form.phone} onChange={handleChange} style={inputStyle} />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>{t.formWeb.email}</label>
+                        <input name="email" type="email" value={form.email} onChange={handleChange} style={inputStyle} />
+                      </div>
+                      <div>
                         <label style={labelStyle}>{t.formWeb.type}</label>
                         <select name="type" value={form.type} onChange={handleChange} style={inputStyle}>
                           <option value="">—</option>
@@ -199,6 +208,14 @@ export default function ContactForm({ lang }: Props) {
                       <div>
                         <label style={labelStyle}>{t.formAds.business}</label>
                         <input name="business" required value={form.business} onChange={handleChange} style={inputStyle} />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>{t.formAds.phone}</label>
+                        <input name="phone" type="tel" required value={form.phone} onChange={handleChange} style={inputStyle} />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>{t.formAds.email}</label>
+                        <input name="email" type="email" value={form.email} onChange={handleChange} style={inputStyle} />
                       </div>
                       <div>
                         <label style={labelStyle}>{t.formAds.campaigns}</label>

@@ -258,6 +258,8 @@ export const T = {
       formWeb: {
         name: 'Tu nombre',
         business: 'Negocio + ciudad',
+        phone: 'Teléfono / WhatsApp',
+        email: 'Email (opcional)',
         type: 'Tipo de web',
         typeOpts: ['Landing page', 'Web corporativa', 'Rediseño'],
         budget: 'Plan de interés',
@@ -267,6 +269,8 @@ export const T = {
       formAds: {
         name: 'Tu nombre',
         business: 'Negocio + ciudad',
+        phone: 'Teléfono / WhatsApp',
+        email: 'Email (opcional)',
         campaigns: '¿Tenés campañas activas?',
         campaignsOpts: ['Sí, en Google', 'No tengo aún'],
         adBudget: 'Presupuesto mensual en ads',
@@ -547,6 +551,8 @@ export const T = {
       formWeb: {
         name: 'Your name',
         business: 'Business + city',
+        phone: 'Phone / WhatsApp',
+        email: 'Email (optional)',
         type: 'Type of website',
         typeOpts: ['Landing page', 'Corporate website', 'Redesign'],
         budget: 'Plan of interest',
@@ -556,6 +562,8 @@ export const T = {
       formAds: {
         name: 'Your name',
         business: 'Business + city',
+        phone: 'Phone / WhatsApp',
+        email: 'Email (optional)',
         campaigns: 'Do you have active campaigns?',
         campaignsOpts: ['Yes, on Google', 'Not yet'],
         adBudget: 'Monthly ad spend',
